@@ -1,1 +1,1 @@
-# Todolist-ejs app from Angela Yu's Udemy tutorial
+# toDolist app made with nodeJS, express and ejs.
