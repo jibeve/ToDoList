@@ -37,7 +37,7 @@ let day = getDate();
 
 
 
-app.get('/', (req, res) => {
+app.get('/maison', (req, res) => {
     res.render('list.ejs', {listTitle: "Maison", newListItems: items, todayDate: day });
 })
 
@@ -49,14 +49,17 @@ app.get('/about', (req, res)=>{
     res.render('about.ejs');
 })
 
-app.post('/', (req, res)=> {
+app.post("/", (req, res)=> {
     let item = req.body.newItem;
-    if (req.body.list === "work"){
+    console.log(item);
+    if (req.body.list === "Travail") {
         workItems.push(item);
         res.redirect('/work');
     } else {
         items.push(item);
-        res.redirect('/');}
+        res.redirect('/maison');
+    }
+
     // if (req.body.delete == "work") {
     //     workItems.pop(item);
     //     res.redirect('/work');
