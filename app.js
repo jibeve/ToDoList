@@ -1,7 +1,8 @@
 import express from "express";
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT;
 const app = express();
+console.log(port);
 
 
 app.use(express.static('public'));
@@ -75,6 +76,6 @@ app.post("/", (req, res)=> {
 //     res.redirect('/work');
 // })
 
-app.listen(PORT, () => {
-    console.log(`Server is up and running on port ${PORT}`)
+app.listen(port, () => {
+    console.log(`Server is up and running on port ${port}`)
 })
